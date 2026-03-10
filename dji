@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DJI Fan Drones</title>
+
+<style>
+
+body{
+
+margin:0;
+font-family:Arial;
+background:#000;
+color:white;
+text-align:center;
+
+}
+
+header{
+
+padding:40px;
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:30px;
+
+}
+
+.card{
+
+background:#111;
+border-radius:10px;
+padding:10px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:scale(1.05);
+
+}
+
+.card img{
+
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+
+}
+
+#dronePage{
+
+display:none;
+padding:40px;
+
+}
+
+.button{
+
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#007aff;
+color:white;
+text-decoration:none;
+border-radius:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>DJI DRONES FAN SITE</h1>
+
+<p>Scopri tutti i droni DJI</p>
+
+</header>
+
+<div class="grid">
+
+<div class="card" onclick="showDrone('Mini 4 Pro','249g','34 minuti','https://www.dji.com/mini-4-pro')">
+<img src="https://cdn.pixabay.com/photo/2023/06/06/11/23/drone-8041010_1280.jpg">
+<h3>Mini 4 Pro</h3>
+</div>
+
+<div class="card" onclick="showDrone('Air 3','720g','46 minuti','https://www.dji.com/air-3')">
+<img src="https://cdn.pixabay.com/photo/2021/06/13/14/34/drone-6339726_1280.jpg">
+<h3>Air 3</h3>
+</div>
+
+<div class="card" onclick="showDrone('Mavic 3 Pro','958g','43 minuti','https://www.dji.com/mavic-3-pro')">
+<img src="https://cdn.pixabay.com/photo/2021/10/26/13/48/drone-6748562_1280.jpg">
+<h3>Mavic 3 Pro</h3>
+</div>
+
+<div class="card" onclick="showDrone('Avata 2','377g','23 minuti','https://www.dji.com/avata-2')">
+<img src="https://cdn.pixabay.com/photo/2022/10/25/18/26/drone-7544452_1280.jpg">
+<h3>Avata 2</h3>
+</div>
+
+<div class="card" onclick="showDrone('Neo','135g','18 minuti','https://www.dji.com')">
+<img src="https://cdn.pixabay.com/photo/2020/07/14/10/31/drone-5408350_1280.jpg">
+<h3>DJI Neo</h3>
+</div>
+
+<div class="card" onclick="showDrone('Flip','249g','31 minuti','https://www.dji.com')">
+<img src="https://cdn.pixabay.com/photo/2021/05/28/08/28/drone-6290675_1280.jpg">
+<h3>DJI Flip</h3>
+</div>
+
+<div class="card" onclick="showDrone('Inspire 3','3995g','28 minuti','https://www.dji.com/inspire-3')">
+<img src="https://cdn.pixabay.com/photo/2016/11/29/05/45/drone-1866742_1280.jpg">
+<h3>Inspire 3</h3>
+</div>
+
+</div>
+
+<div id="dronePage">
+
+<h1 id="name"></h1>
+
+<p id="info"></p>
+
+<iframe id="video" width="700" height="400"
+src="https://www.youtube.com/embed/7Hq1JYx5cF0"
+allowfullscreen></iframe>
+
+<br>
+
+<a id="link" class="button" target="_blank">
+
+Vai al sito DJI
+
+</a>
+
+</div>
+
+<script>
+
+function showDrone(name,weight,flight,link){
+
+document.getElementById("dronePage").style.display="block"
+
+document.getElementById("name").innerText=name
+
+document.getElementById("info").innerHTML=
+
+"Peso: "+weight+"<br>Tempo di volo: "+flight
+
+document.getElementById("link").href=link
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
